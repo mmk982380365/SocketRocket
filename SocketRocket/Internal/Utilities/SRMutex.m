@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 SRMutex SRMutexInitRecursive(void)
 {
-    pthread_mutex_t *mutex = malloc(sizeof(pthread_mutex_t));
+    pthread_mutex_t *mutex = calloc(1, sizeof(pthread_mutex_t));
     pthread_mutexattr_t attributes;
 
     pthread_mutexattr_init(&attributes);
